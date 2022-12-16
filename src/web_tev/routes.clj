@@ -12,6 +12,5 @@
                      (compojure/GET "/api/random-clojure-function" [:as req] (-> req
                                                                                  api-routes/random-clojure-function
                                                                                  json/write-str))
-                     (routing/files "/" {:root "static"})
                      (routing/not-found (-> {:message "404 - Not found"}
                                             json/write-str)))
