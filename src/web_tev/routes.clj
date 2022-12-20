@@ -8,8 +8,8 @@
             [web-tev.routes.root :as root-routes]))
 
 (compojure/defroutes routes
-                     (compojure/GET "/" [:as req] (-> req
-                                                      root-routes/root))
+                     (compojure/GET "/" [] (root-routes/root))
+                     (compojure/GET "/style.css" [] (root-routes/style))
                      (middleware/wrap-canonical-redirect (compojure/GET "/api/random-clojure-function" [:as req]
                                                            (-> req
                                                                api-routes/random-clojure-function

@@ -7,7 +7,8 @@
                  [compojure "1.7.0"]
                  [org.clojure/data.json "2.4.0"]
                  [lynxeyes/dotenv "1.1.0"]
-                 [hiccup "1.0.5"]]
+                 [hiccup "1.0.5"]
+                 [garden "1.3.10"]]
   :main ^:skip-aot web-tev.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})
