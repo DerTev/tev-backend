@@ -18,23 +18,31 @@
                       [:br]
                       "&nbsp;:location \"Germany\""
                       [:br]
-                      "&nbsp;:skills [\"Clojure\" \"ClojureScript\"]"
+                      "&nbsp;:skills [\"" [:a {:href "https://clojure.org"
+                                               :target "_blank"} "Clojure"]
+                      "\" \"" [:a {:href "https://clojurescript.org"
+                                   :target "_blank"} "ClojureScript"] "\"]"
                       [:br]
-                      "&nbsp;:mail \"Tim@DerTev.de\""
+                      "&nbsp;:mail \"" [:a {:href "mailto:Tim@DerTev.de"} "Tim@DerTev.de"] "\""
                       [:br]
-                      "&nbsp;:mastodon \"@tev@chaos.social\""
+                      "&nbsp;:mastodon \"" [:a {:href "https://chaos.social/@tev"
+                                                :target "_blank"} "@tev@chaos.social"] "\""
                       [:br]
-                      "&nbsp;:github \"github.com/DerTev\""
+                      "&nbsp;:github \" "[:a {:href "https://github.com/DerTev"
+                                              :target "_blank"} "github.com/DerTev"] "\""
                       [:br]
                       "&nbsp;:website \"DerTev.de\"}"]]]))
 
 (defn style []
-  (css/css [:body {:background  "rgb(32, 33, 36)"
-                   :color       "rgb(28, 239, 28)"
-                   :font-family "'Chivo Mono', monospace"
-                   :text-shadow "rgb(0, 255, 0) 1px 0 10px"
-                   :font-size   "20px"}
-            :p {:position  "absolute"
-                :transform "translate(-50%, -50%)"
-                :left      "50%"
-                :top       "50%"}]))
+  (let [text-color "rgb(28, 239, 28)"]
+    (css/css [:body {:background  "rgb(32, 33, 36)"
+                     :color       text-color
+                     :font-family "'Chivo Mono', monospace"
+                     :text-shadow "rgb(0, 255, 0) 1px 0 10px"
+                     :font-size   "20px"}]
+              [:p {:position  "absolute"
+                  :transform "translate(-50%, -50%)"
+                  :left      "50%"
+                  :top       "50%"}]
+              [:a {:color text-color
+                  :text-decoration "none"}])))
