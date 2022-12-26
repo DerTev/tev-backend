@@ -4,6 +4,8 @@
             [dotenv :as env]))
 
 (defn -main [& args]
+  (println "Matrix Homeserver: " (env/env :MATRIX_HOMESERVER))
+  (println "Matrix Port: " (env/env (env/env :MATRIX_PORT)))
   (println "Start application...")
   (-> :PORT
       env/env

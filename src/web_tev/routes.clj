@@ -5,7 +5,8 @@
             [compojure.middleware :as middleware]
 
             [web-tev.routes.api :as api-routes]
-            [web-tev.routes.root :as root-routes]))
+            [web-tev.routes.root :as root-routes]
+            [web-tev.routes.matrix :as matrix-routes]))
 
 (compojure/defroutes routes
                      (compojure/GET "/" [] (root-routes/root))
@@ -14,5 +15,9 @@
                                                            (-> req
                                                                api-routes/random-clojure-function
                                                                json/write-str)))
+                     (compojure/GET "/.well-known/matrix/client" [] (-> (matrix-routes/client)
+                                                                        json/write-str))
+                     (compojure/GET "/.well-known/matrix/server" [] (-> (matrix-routes/server)
+                                                                        json/write-str))
                      (routing/not-found (-> {:message "404 - Not found"}
                                             json/write-str)))
