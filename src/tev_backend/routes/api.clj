@@ -1,4 +1,4 @@
-(ns web-tev.routes.api)
+(ns tev-backend.routes.api)
 
 (defn random-clojure-function
   "Response for /api/random-clojure-function"

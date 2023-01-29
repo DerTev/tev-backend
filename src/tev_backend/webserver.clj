@@ -1,6 +1,6 @@
-(ns web-tev.webserver
+(ns tev-backend.webserver
   (:require [org.httpkit.server :as http-srv]
-            [web-tev.routes :as routes]))
+            [tev-backend.routes :as routes]))
 
 (defn start-webserver
   "Start webserver on `port`"

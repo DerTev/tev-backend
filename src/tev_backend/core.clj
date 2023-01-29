@@ -1,6 +1,6 @@
-(ns web-tev.core
+(ns tev-backend.core
   (:gen-class)
-  (:require [web-tev.webserver :as webserver]
+  (:require [tev-backend.webserver :as webserver]
             [dotenv :as env]))
 
 (defn -main [& args]

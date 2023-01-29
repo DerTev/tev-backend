@@ -1,4 +1,4 @@
-(defproject web-tev "0.1.0-SNAPSHOT"
+(defproject tev-backend "0.1.0-SNAPSHOT"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
   :license {:name "MIT License"}
@@ -9,6 +9,6 @@
                  [lynxeyes/dotenv "1.1.0"]
                  [hiccup "1.0.5"]
                  [garden "1.3.10"]]
-  :main ^:skip-aot web-tev.core
+  :main ^:skip-aot tev-backend.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})
